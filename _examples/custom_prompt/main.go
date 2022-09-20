@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 type pepper struct {
@@ -19,14 +19,14 @@ func main() {
 		return err
 	}
 
-	templates := &promptui.PromptTemplates{
+	templates := &promptercli.PromptTemplates{
 		Prompt:  "{{ . }} ",
 		Valid:   "{{ . | green }} ",
 		Invalid: "{{ . | red }} ",
 		Success: "{{ . | bold }} ",
 	}
 
-	prompt := promptui.Prompt{
+	prompt := promptercli.Prompt{
 		Label:     "Spicy Level",
 		Templates: templates,
 		Validate:  validate,

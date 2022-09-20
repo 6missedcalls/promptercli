@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os/user"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 		username = u.Username
 	}
 
-	prompt := promptui.Prompt{
+	prompt := promptercli.Prompt{
 		Label:    "Username",
 		Validate: validate,
 		Default:  username,

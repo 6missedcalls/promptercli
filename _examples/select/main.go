@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 func main() {
-	prompt := promptui.Select{
+	prompt := promptercli.Select{
 		Label: "Select Day",
 		Items: []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
 			"Saturday", "Sunday"},

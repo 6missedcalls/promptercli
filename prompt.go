@@ -3,6 +3,7 @@ package promptercli
 import (
 	"fmt"
 	"io"
+	"os"
 	"strings"
 	"text/template"
 
@@ -141,6 +142,7 @@ func (p *Prompt) Run() (string, error) {
 	}
 	// we're taking over the cursor,  so stop showing it.
 	rl.Write([]byte(hideCursor))
+	os.Stdout.Write([]byte(doLineWrap))
 	sb := screenbuf.New(rl)
 
 	validFn := func(x string) error {
@@ -218,6 +220,8 @@ func (p *Prompt) Run() (string, error) {
 		sb.Flush()
 		rl.Write([]byte(showCursor))
 		rl.Close()
+
+		os.Stdout.Write([]byte(doLineWrap))
 		return "", err
 	}
 

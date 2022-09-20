@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 func main() {
-	prompt := promptui.Prompt{
+	prompt := promptercli.Prompt{
 		Label:     "Delete Resource",
 		IsConfirm: true,
 	}

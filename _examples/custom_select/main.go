@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 type pepper struct {
@@ -27,7 +27,7 @@ func main() {
 		{Name: "Dragon’s Breath", HeatUnit: 855000, Peppers: 9},
 	}
 
-	templates := &promptui.SelectTemplates{
+	templates := &promptercli.SelectTemplates{
 		Label:    "{{ . }}?",
 		Active:   "\U0001F336 {{ .Name | cyan }} ({{ .HeatUnit | red }})",
 		Inactive: "  {{ .Name | cyan }} ({{ .HeatUnit | red }})",
@@ -47,7 +47,7 @@ func main() {
 		return strings.Contains(name, input)
 	}
 
-	prompt := promptui.Select{
+	prompt := promptercli.Select{
 		Label:     "Spicy Level",
 		Items:     peppers,
 		Templates: templates,

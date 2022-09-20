@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 		return nil
 	}
 
-	prompt := promptui.Prompt{
+	prompt := promptercli.Prompt{
 		Label:    "Number",
 		Validate: validate,
 	}

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/manifoldco/promptui"
+	promptercli "github.com/manifoldco/promptui"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 	var err error
 
 	for index < 0 {
-		prompt := promptui.SelectWithAdd{
+		prompt := promptercli.SelectWithAdd{
 			Label:    "What's your text editor",
 			Items:    items,
 			AddLabel: "Other",
