@@ -8,7 +8,7 @@
 //
 // Select provides a list of options to choose from. It supports pagination, search,
 // detailed view and custom templates.
-package promptui
+package promptercli
 
 import "errors"
 

@@ -1,4 +1,4 @@
-package promptui
+package promptercli
 
 import (
 	"bytes"
@@ -244,6 +244,7 @@ func (s *Select) innerRun(cursorPos, scroll int, top rune) (int, string, error) 
 	}
 
 	rl.Write([]byte(hideCursor))
+	rl.Write([]byte(noLineWrap))
 	sb := screenbuf.New(rl)
 
 	cur := NewCursor("", s.Pointer, false)
@@ -377,11 +378,14 @@ func (s *Select) innerRun(cursorPos, scroll int, top rune) (int, string, error) 
 		if err.Error() == "Interrupt" {
 			err = ErrInterrupt
 		}
+		clearScreen(sb)
 		sb.Reset()
 		sb.WriteString("")
 		sb.Flush()
 		rl.Write([]byte(showCursor))
 		rl.Close()
+
+		os.Stdout.Write([]byte(doLineWrap))
 		return 0, "", err
 	}
 

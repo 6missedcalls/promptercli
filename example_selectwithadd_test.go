@@ -1,4 +1,4 @@
-package promptui
+package promptercli
 
 import "fmt"
 

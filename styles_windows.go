@@ -1,4 +1,4 @@
-package promptui
+package promptercli
 
 // These are the default icons used bu promptui for select and prompts. They can either be overridden directly
 // from these variable or customized through the use of custom templates

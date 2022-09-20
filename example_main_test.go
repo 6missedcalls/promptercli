@@ -1,4 +1,4 @@
-package promptui
+package promptercli
 
 import (
 	"errors"
@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-// This is an example for the Prompt mode of promptui. In this example, a prompt is created
+// This is an example for the Prompt mode of promptercli. In this example, a prompt is created
 // with a validator function that validates the given value to make sure its a number.
 // If successful, it will output the chosen number in a formatted message.
 func Example_prompt() {
@@ -33,7 +33,7 @@ func Example_prompt() {
 	fmt.Printf("You choose %q\n", result)
 }
 
-// This is an example for the Select mode of promptui. In this example, a select is created with
+// This is an example for the Select mode of promptercli. In this example, a select is created with
 // the days of the week as its items. When an item is selected, the selected day will be displayed
 // in a formatted message.
 func Example_select() {

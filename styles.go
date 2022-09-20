@@ -1,6 +1,7 @@
+//go:build !windows
 // +build !windows
 
-package promptui
+package promptercli
 
 // These are the default icons used by promptui for select and prompts. These should not be overridden and instead
 // customized through the use of custom templates

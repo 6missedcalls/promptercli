@@ -1,6 +1,7 @@
+//go:build !windows
 // +build !windows
 
-package promptui
+package promptercli
 
 import "github.com/chzyer/readline"
 
